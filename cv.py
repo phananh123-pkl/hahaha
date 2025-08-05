@@ -62,9 +62,9 @@ def cont(state: dict):
 def qna(state:dict):
     query= state['user_query']
     prompt_4 = f"""
-    Dưới đây là dữ liệu đã trích xuất từ CV:\n{state["parsed_data"]}
-    Câu hỏi: {query}, dựa vào dữ liệu đã trích xuất, hãy trả lời câu hỏi liên quan tới ứng viên
-    CHỈ IN RA CÂU TRẢ LỜI, KHÔNG IN LẠI DỮ LIỆU ĐÃ TRÍCH XUẤT
+    Trả lời câu hỏi sau liên quan tới thông tin CV một cách ngắn gọn
+    Câu hỏi: {query}, dựa vào dữ liệu đã trích xuất
+    Thông tin CV đã được lưu sẵn, chỉ cần trả lời ngắn gọn
     """
     ans=llm.invoke(prompt_4)
     state['mes'] = ans
